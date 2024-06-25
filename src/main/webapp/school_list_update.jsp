@@ -6,6 +6,58 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f5f5;
+        margin: 0;
+        padding: 20px;
+        color: #333;
+    }
+    table {
+        width: 50%;
+        border-collapse: collapse;
+        margin: auto;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    table, th, td {
+        border: 1px solid #ccc;
+    }
+    th, td {
+        padding: 10px;
+        text-align: center;
+    }
+    form {
+        width: 50%;
+        margin: auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
+    }
+    input[type="text"] {
+        width: calc(100% - 20px);
+        padding: 8px;
+        margin: 5px 0;
+        border: 1px solid #ccc;
+        border-radius: 3px;
+        box-sizing: border-box;
+    }
+    input[type="submit"], input[type="button"] {
+        background-color: #3498db;
+        color: #fff;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-left: 130px;
+    }
+    input[type="submit"]:hover, input[type="button"]:hover {
+        background-color: #2980b9;
+    }
+</style>
 <script>
 function confirmDelete() {
     return confirm('정말 삭제하시겠습니까?');
@@ -21,31 +73,30 @@ function confirmDelete() {
     ResDTO rdto = rdao.selectName(Name);
 %>
 <form action="school_list_update_proc.jsp" method="post">
-    <table border="1">
+    <table>
         <tr height="50">
             <td align="center" width="120">학교이름 </td>
-            <td align="center" width="200">
-                <input type="hidden" name="Name" value="<%=rdto.getName() %>">
+            <td align="center"><input type="hidden" name="Name" value="<%=rdto.getName() %>">
                 <%=rdto.getName()%></td>
         </tr>
         <tr height="50">
             <td align="center" width="120">전화번호 </td>
-            <td align="center" width="200"><input type="text" name="Tel" size="40"
+            <td align="center"><input type="text" name="Tel" size="40"
                     value="<%=rdto.getTel()%>"></td>
         </tr>
         <tr height="50">
             <td align="center" width="120">학교위치 </td>
-            <td align="center" width="200"><input type="text" name="Loc" size="40"
+            <td align="center"><input type="text" name="Loc" size="40"
                     value="<%=rdto.getLoc()%>"></td>
         </tr>
         <tr height="50">
             <td align="center" width="120">학교상징 </td>
-            <td align="center" width="200"><input type="text" name="Simbol" size="40"
+            <td align="center"><input type="text" name="Simbol" size="40"
                     value="<%=rdto.getSimbol()%>"></td>
         </tr>
         <tr height="50">
             <td align="center" width="120">학교소개 </td>
-            <td align="center" width="200"><input type="text" name="Intro" size="40"
+            <td align="center"><input type="text" name="Intro" size="40"
                     value="<%=rdto.getIntro()%>"></td>
         </tr>
     </table>

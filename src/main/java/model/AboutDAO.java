@@ -6,7 +6,6 @@ import javax.sql.DataSource;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-import model.AboutDTO;
 
 public class AboutDAO {
     private Connection con;

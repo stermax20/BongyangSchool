@@ -17,7 +17,7 @@
     boolean success = dao.insertAnswer(answer);
 
     if (success) {
-        response.sendRedirect("aboutList.jsp");
+        response.sendRedirect("adminMain.jsp");
     } else {
 %>
 <!DOCTYPE html>
@@ -25,6 +25,36 @@
 <head>
     <meta charset="UTF-8">
     <title>답변 제출 실패</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+            text-align: center;
+        }
+        h2 {
+            color: #e74c3c;
+        }
+        p {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        a {
+            display: inline-block;
+            background-color: #3498db;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        a:hover {
+            background-color: #2980b9;
+        }
+    </style>
 </head>
 <body>
     <h2>답변 제출 실패</h2>
